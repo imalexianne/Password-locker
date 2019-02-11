@@ -1,10 +1,7 @@
 
 
 
-# class Credential:
-#   """
-#   Class that generates new instances of credentials
-#   """
+
   
 class User:
     """
