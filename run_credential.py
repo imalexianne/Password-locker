@@ -74,6 +74,8 @@ def main():
 
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
+    
+    
     print("Use these short codes : ca -create an account, lo -login, ex -exit the  app")
     while True:
             
@@ -190,7 +192,8 @@ def main():
                     search_account_name = input()
 
                     if check_existing_credential(search_account_name):
-                            search_password = find_credential(search_account_name)
+                            search_account_name = find_credential(search_account_name)
+                            del_credential(search_account_name)
                             
                        
                             print("CREDENTIAL DELETED")
