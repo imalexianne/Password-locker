@@ -42,17 +42,23 @@ def find_credential(account_name):
     '''
     return Credential.find_account_name(account_name)
 
+def find_user(password):
+    '''
+    Function that finds a user by password and returns the user
+    '''
+    return User.find_user(password)    
+
 def check_existing_credential(account_name):
     '''
     Function that check if a credential exists with that account_name and return a Boolean
     '''
     return Credential.credential_exist(account_name)
 
-def check_existing_user(user_name):
+def check_existing_user(password):
     '''
     Function that check if a user exists with that user_name and return a Boolean
     '''
-    return User.user_exist(user_name)
+    return User.user_exist(password)
 
 def display_credentials():
     '''
@@ -108,31 +114,21 @@ def main():
                 #     print("-"*10)
 
                     print ("enter user_name ....")
-                    user_name = input({user_name})
+                    user_name = input()
 
                     print("Enter password ...")
-                    password  = input({password})
+                    search_password = input()
+
+                    if check_existing_user(search_password):
+                            search_password = find_user(search_password)
+                            
+                       
+                            print("WELLCOME")
 
                     else:
-                        print("You don't have an account")
+                            print("PLEASE CREATE AN ACCOUNT")
 
-                #     print("e_mail ...")
-                #     e_mail= input()
-
-                #     print("user_name ...")
-                #     user_name = input()
-
-                #     print("password ...")
-                #     password= input()
-
-
-                            
-
-                    save_users(create_user(first_name, last_name, e_mail, user_name, password   )) # create and save new user.
-                    print ('\n')
-                    print(f"New User first_name: {first_name}, last_name: {last_name}, e_mail: {e_mail}, user_name: {user_name}, password: {password}  created")
-                    print ('\n')
-
+                       
 
             
             
@@ -182,8 +178,7 @@ def main():
                             print(f"{search_credential.account_name} {search_credential.account_user_name} {search_credential.account_password}")
                             print('-' * 20)
 
-                            # print(f"Phone number.......{search_contact.phone_number}")
-                            # print(f"Email address.......{search_contact.email}")
+                            
                     else:
                             print("That credential does not exist")
 
@@ -197,8 +192,7 @@ def main():
                             print(f"credential is deleted from the list")
                             print('-' * 20)
 
-                            # print(f"Phone number.......{search_contact.phone_number}")
-                            # print(f"Email address.......{search_contact.email}")
+                            
                     else:
                             print("That credential does not exist")
 
