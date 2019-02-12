@@ -110,9 +110,7 @@ def main():
 
 
             elif short_code == 'lo':
-                #     print("New User")
-                #     print("-"*10)
-
+               
                     print ("enter user_name ....")
                     user_name = input()
 
@@ -184,17 +182,19 @@ def main():
 
             elif short_code == 'dl':
 
-                    print("Enter the account_name you want to delete for")
+                    print("Enter the account_name you want to delete ")
 
+                     
                     search_account_name = input()
-                    if del_credential(search_account_name):
-                            search_credential = find_credential(search_account_name)
-                            print(f"credential is deleted from the list")
-                            print('-' * 20)
 
+                    if check_existing_credential(search_account_name):
+                            search_password = find_credential(search_account_name)
                             
+                       
+                            print("CREDENTIAL DELETED")
+
                     else:
-                            print("That credential does not exist")
+                            print("CREDENTIAL DOESN'T EXIST")
 
 
             elif short_code == "ex":
