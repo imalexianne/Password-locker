@@ -2,7 +2,7 @@
 
 
 
-  
+import pyperclip  
 class User:
     """
     Class that generates new instances of contacts.
@@ -53,3 +53,8 @@ class User:
         for user in cls.user_list:
             if user.password == password:
                 return user
+
+    @classmethod
+    def copy_e_mail(cls,number):
+        user_found = User.find_by_user_name(user_name)
+        pyperclip.copy(contact_found.e_mail)

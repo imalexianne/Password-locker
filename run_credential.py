@@ -74,9 +74,9 @@ def main():
 
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
-
+    print("Use these short codes : ca -create an account, lo -login, ex -exit the  app")
     while True:
-            print("Use these short codes : ca -create an account, lo -login, cc - create a new credential, dc - display credentials, fc -find a credential,dl -delete credential from the list,  ex -exit the credential list ")
+            
 
             short_code = input().lower()
 
@@ -122,6 +122,8 @@ def main():
                             
                        
                             print("WELLCOME")
+
+                            print("Use these short codes: cc - create a new credential, dc - display credentials, fc -find a credential,dl -delete credential from the list,  ex -exit the credential list")
 
                     else:
                             print("PLEASE CREATE AN ACCOUNT")
